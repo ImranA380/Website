@@ -130,7 +130,15 @@ if (traffic.y > canvas.height) {
 
 ctx.fillStyle = "blue";
 ctx.fillRect(traffic.x, traffic.y, traffic.w, traffic.h);
-
+if (
+  car.x < traffic.x + traffic.w &&
+  car.x + car.w > traffic.x &&
+  car.y < traffic.y + traffic.h &&
+  car.y + car.h > traffic.y
+) {
+  alert("💥 Crash! Game Over");
+  location.reload();
+}
 score++;
 
 document.getElementById("score").innerText=
