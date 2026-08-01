@@ -1,12 +1,163 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Website</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Website</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,Helvetica,sans-serif;
+}
+
+body{
+    background:#0f172a;
+    color:#fff;
+}
+
+header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 10%;
+    position:fixed;
+    width:100%;
+    background:rgba(15,23,42,.85);
+    backdrop-filter:blur(10px);
+}
+
+.logo{
+    font-size:28px;
+    font-weight:bold;
+    color:#38bdf8;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin-left:25px;
+    transition:.3s;
+}
+
+nav a:hover{
+    color:#38bdf8;
+}
+
+.hero{
+    height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:20px;
+    background:linear-gradient(135deg,#0f172a,#1e3a8a);
+}
+
+.hero h1{
+    font-size:60px;
+    margin-bottom:15px;
+}
+
+.hero p{
+    max-width:700px;
+    color:#d1d5db;
+    font-size:20px;
+    margin-bottom:35px;
+}
+
+.button{
+    text-decoration:none;
+    background:#38bdf8;
+    color:#0f172a;
+    padding:15px 35px;
+    border-radius:50px;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.button:hover{
+    transform:translateY(-3px);
+    box-shadow:0 10px 30px rgba(56,189,248,.4);
+}
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:25px;
+    padding:80px 10%;
+}
+
+.card{
+    background:#1e293b;
+    padding:30px;
+    border-radius:18px;
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+}
+
+.card h3{
+    color:#38bdf8;
+    margin-bottom:15px;
+}
+
+footer{
+    text-align:center;
+    padding:30px;
+    color:#94a3b8;
+    border-top:1px solid #334155;
+}
+</style>
+
 </head>
 <body>
-    <h1>Hello, GitHub Pages!</h1>
-    <p>My website is working.</p>
+
+<header>
+<div class="logo">My Website</div>
+
+<nav>
+<a href="#">Home</a>
+<a href="#">About</a>
+<a href="#">Services</a>
+<a href="#">Contact</a>
+</nav>
+</header>
+
+<section class="hero">
+<h1>Welcome</h1>
+<p>Create beautiful websites with GitHub Pages. Fast, modern, responsive and completely free.</p>
+
+<a class="button" href="#">Get Started</a>
+</section>
+
+<section class="cards">
+
+<div class="card">
+<h3>Modern Design</h3>
+<p>Clean layout with smooth animations and a professional appearance.</p>
+</div>
+
+<div class="card">
+<h3>Responsive</h3>
+<p>Looks great on phones, tablets and desktop computers.</p>
+</div>
+
+<div class="card">
+<h3>Free Hosting</h3>
+<p>Host your website using GitHub Pages at no cost.</p>
+</div>
+
+</section>
+
+<footer>
+© 2026 My Website • Built with HTML & CSS
+</footer>
+
 </body>
 </html>
