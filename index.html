@@ -65,6 +65,7 @@ h:90
 };
 
 let score=0;
+let gameOver = false;
 let traffic = {
   x: innerWidth / 2 - 25,
   y: -100,
@@ -131,13 +132,18 @@ if (traffic.y > canvas.height) {
 ctx.fillStyle = "blue";
 ctx.fillRect(traffic.x, traffic.y, traffic.w, traffic.h);
 if (
+  !gameOver &&
   car.x < traffic.x + traffic.w &&
   car.x + car.w > traffic.x &&
   car.y < traffic.y + traffic.h &&
   car.y + car.h > traffic.y
 ) {
-  alert("💥 Crash! Game Over");
-  location.reload();
+  gameOver = true;
+
+  setTimeout(() => {
+    alert("💥 Crash! Game Over");
+    location.reload();
+  }, 100);
 }
 score++;
 
