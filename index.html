@@ -66,23 +66,28 @@ h:90
 
 let score=0;
 
-let left=false;
-let right=false;
+const leftBtn = document.getElementById("left");
+const rightBtn = document.getElementById("right");
 
-left.onpointerdown=()=>left=true;
-left.onpointerup=()=>left=false;
+let moveLeft = false;
+let moveRight = false;
 
-right.onpointerdown=()=>right=true;
-right.onpointerup=()=>right=false;
+leftBtn.onpointerdown = () => moveLeft = true;
+leftBtn.onpointerup = () => moveLeft = false;
+leftBtn.onpointercancel = () => moveLeft = false;
 
-addEventListener("keydown",e=>{
-if(e.key=="ArrowLeft")left=true;
-if(e.key=="ArrowRight")right=true;
+rightBtn.onpointerdown = () => moveRight = true;
+rightBtn.onpointerup = () => moveRight = false;
+rightBtn.onpointercancel = () => moveRight = false;
+
+addEventListener("keydown", e => {
+  if (e.key === "ArrowLeft") moveLeft = true;
+  if (e.key === "ArrowRight") moveRight = true;
 });
 
-addEventListener("keyup",e=>{
-if(e.key=="ArrowLeft")left=false;
-if(e.key=="ArrowRight")right=false;
+addEventListener("keyup", e => {
+  if (e.key === "ArrowLeft") moveLeft = false;
+  if (e.key === "ArrowRight") moveRight = false;
 });
 
 function game(){
@@ -102,8 +107,8 @@ ctx.lineTo(canvas.width/2,i*60+30+(score%60));
 ctx.stroke();
 }
 
-if(left)car.x-=6;
-if(right)car.x+=6;
+if(moveLeft) car.x -= 6;
+if(moveRight) car.x += 6;
 
 car.x=Math.max(canvas.width/2-110,
 Math.min(canvas.width/2+60,car.x));
