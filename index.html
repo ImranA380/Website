@@ -65,7 +65,12 @@ h:90
 };
 
 let score=0;
-
+let traffic = {
+  x: innerWidth / 2 - 25,
+  y: -100,
+  w: 50,
+  h: 90
+};
 const leftBtn = document.getElementById("left");
 const rightBtn = document.getElementById("right");
 
@@ -115,6 +120,16 @@ Math.min(canvas.width/2+60,car.x));
 
 ctx.fillStyle="red";
 ctx.fillRect(car.x,car.y,car.w,car.h);
+
+traffic.y += 5;
+
+if (traffic.y > canvas.height) {
+  traffic.y = -100;
+  traffic.x = canvas.width / 2 - 110 + Math.random() * 170;
+}
+
+ctx.fillStyle = "blue";
+ctx.fillRect(traffic.x, traffic.y, traffic.w, traffic.h);
 
 score++;
 
