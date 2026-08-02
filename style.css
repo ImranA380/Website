@@ -1,1 +1,54 @@
-/* Highway Rush V3 styles */
+body{
+    margin:0;
+    background:#222;
+    overflow:hidden;
+    font-family:Arial,sans-serif;
+}
+
+canvas{
+    display:block;
+    background:#555;
+}
+
+#score{
+    position:absolute;
+    top:10px;
+    left:10px;
+    color:white;
+    font-size:24px;
+    font-weight:bold;
+}
+
+#controls{
+    position:absolute;
+    bottom:20px;
+    width:100%;
+    display:flex;
+    justify-content:space-between;
+    padding:0 20px;
+    box-sizing:border-box;
+}
+
+button{
+    width:90px;
+    height:90px;
+    font-size:35px;
+    border:none;
+    border-radius:50%;
+    opacity:0.8;
+    cursor:pointer;
+}
+
+#gameOver{
+    display:none;
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    background:white;
+    padding:25px;
+    border-radius:15px;
+    text-align:center;
+    font-family:Arial,sans-serif;
+    box-shadow:0 10px 30px rgba(0,0,0,.4);
+}
