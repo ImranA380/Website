@@ -1,2 +1,2 @@
 // Highway Rush V3
-console.log("Game loaded!");
+console.log("🚗 Highway Rush loaded!");
