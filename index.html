@@ -4,7 +4,14 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Highway Rush</title>
 <style>
-body{margin:0;background:#222;overflow:hidden;font-family:Arial}
+body{margin:0;background:#222;overflow:hidden;font-family:Arial;
+
+touch-action: none;
+overscroll-behavior: none;
+user-select: none;
+-webkit-user-select: none;
+
+}
 canvas{display:block;background:#555}
 #score{
 position:absolute;
@@ -68,6 +75,15 @@ Play Again
 </div>
 
 <script>
+
+document.addEventListener("touchstart", e => {
+    e.preventDefault();
+}, { passive: false });
+
+document.addEventListener("touchmove", e => {
+    e.preventDefault();
+}, { passive: false });
+
 const canvas=document.getElementById("game");
 const ctx=canvas.getContext("2d");
 
